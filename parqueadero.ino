@@ -1,5 +1,5 @@
-const int cupos_totales = 20;  
-int cupos_disponibles = 20; 
+const int cupos_totales =5;  
+int cupos_disponibles = 5; 
 long int valor_recaudado = 0;
 int costo= 5000;
 
@@ -18,7 +18,7 @@ void setup() {
   pinMode(ledVerdePin, OUTPUT);
   pinMode(ledRojoPin, OUTPUT);
   Serial.begin(9600);
-  Serial.println("CUPO MAXIMO: 20");
+  Serial.println("CUPO MAXIMO: 5");
 }
 
 void loop() {
@@ -37,7 +37,7 @@ void loop() {
   }
   subida1=digitalRead(botonIngresoPin);
   
-  if(egreso==HIGH && cupos_disponibles<20 && subida2==0){
+  if(egreso==HIGH && cupos_disponibles<5 && subida2==0){
     cupos_disponibles=cupos_disponibles+1;
     valor_recaudado=valor_recaudado+5000;
     Serial.print("Cupos: ");
@@ -49,7 +49,7 @@ void loop() {
   }
   subida2=digitalRead(botonEgresoPin);
   
-  if(cupos_disponibles>0 && cupos_disponibles<=10){
+  if(cupos_disponibles>0 && cupos_disponibles<=5){
     digitalWrite(ledRojoPin,LOW);
     digitalWrite(ledVerdePin,HIGH);
   }  
@@ -59,5 +59,5 @@ void loop() {
     digitalWrite(ledRojoPin,HIGH);
   }
  
-  delay(10); 
+  delay(100); 
 }

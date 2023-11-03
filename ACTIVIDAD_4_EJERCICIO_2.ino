@@ -29,11 +29,11 @@ void loop() {
 
   if(valor >= 0 && valor <=255)
   {
-       digitalWrite(LED_2, HIGH);
+       digitalWrite(LED_2, LOW);
       digitalWrite(LED_3, HIGH);
       digitalWrite(LED_4, HIGH);
       delay(500);
-      digitalWrite(LED_2, LOW);
+      digitalWrite(LED_2, HIGH);
       digitalWrite(LED_3, LOW);
       digitalWrite(LED_4, LOW);
       delay(500);
